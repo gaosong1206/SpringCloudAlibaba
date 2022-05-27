@@ -1,0 +1,13 @@
+server:
+  port: 8020
+# 服务名称及为nacos中服务的名称
+spring:
+  application:
+    name: order-nacos-gs
+  cloud:
+    nacos:
+      server-addr: 192.168.2.60:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
