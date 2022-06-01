@@ -1,0 +1,15 @@
+server:
+  port: 8050
+
+# 服务名称及为nacos中服务的名称
+spring:
+  application:
+    name: product-nacos
+  cloud:
+    nacos:
+      server-addr: 192.168.2.60:8848
+      discovery:
+        username: nacos
+        password: nacos
+        namespace: public
+        ephemeral: false # 永久实例，服务宕机也会保存在nacos中，nacos不会删除该实例。

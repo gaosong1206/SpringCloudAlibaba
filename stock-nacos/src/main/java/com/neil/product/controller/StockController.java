@@ -1,4 +1,4 @@
-package com.neil.stock.controller;
+package com.neil.product.controller;
 
 
 import org.springframework.beans.factory.annotation.Value;

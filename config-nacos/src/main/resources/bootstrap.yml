@@ -1,0 +1,23 @@
+
+spring:
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      username: nacos
+      password: nacos
+      # 解决控制台循环打印client-work日志
+      # config:
+      #  namespace: public
+      # nacos客户端默认读取的是properties的文件
+      # 一旦修改了非properties格式的文件，必须修改该配置
+      config:
+        file-extension: yaml
+        # refresh-enabled: false nacos客户端无法感知配置中心的变化
+  application:
+    # 会自动根据服务名拉取dataid对应的配置文件，如果dataid和服务名称不一致，需要手动指定dataid
+    # 跟服务名相同的dataid的配置文件，称之为默认的配置文件
+    # 除了默认的配置文件，其他配置文件必须写上后缀
+    name: com.neil.order.redis
+
+# 配置文件的优先级（优先级大的会覆盖优先级小的，并且会形成互补）
+# profile > 默认的配置文件

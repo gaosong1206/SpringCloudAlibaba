@@ -14,4 +14,13 @@ spring:
 
 stock-nacos:
   ribbon:
-    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+        # NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+        # 自定义负载均衡策略
+        NFLoadBalancerRuleClassName: com.neil.ribbon.rule.CustomRule
+ribbon:
+  eager-load:
+    # 开启ribbon饥饿加载
+    enabled: true
+    # 配置stock-nacos使用ribbon饥饿加载，多个使用逗号分隔
+    clients: stock-nacos
+

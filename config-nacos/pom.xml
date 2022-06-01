@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <artifactId>springcloudalibaba</artifactId>
         <groupId>com.neil</groupId>
@@ -11,7 +10,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>order-ribbon</artifactId>
+    <artifactId>config-nacos</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,17 +18,10 @@
     </properties>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>
