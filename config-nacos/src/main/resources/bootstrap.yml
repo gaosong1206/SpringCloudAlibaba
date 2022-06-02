@@ -11,8 +11,22 @@ spring:
       # nacos客户端默认读取的是properties的文件
       # 一旦修改了非properties格式的文件，必须修改该配置
       config:
+        # 只针对默认的配置文件和profile
         file-extension: yaml
         # refresh-enabled: false nacos客户端无法感知配置中心的变化
+        namespace: 818aba3e-8c20-43d5-8e66-b5cf54b292aa
+        group: neil_group
+        shared-configs:
+          - data-id: com.neil.order.common.properties # 下标为0
+            refresh: true
+            group: neil_group
+          - data-id: com.neil.order.common02.properties # 下标为1
+            refresh: true
+            group: neil_group
+        extension-configs[0]:
+          data-id: com.neil.order.common03.properties # 下标为0
+          refresh: true
+          group: neil_group
   application:
     # 会自动根据服务名拉取dataid对应的配置文件，如果dataid和服务名称不一致，需要手动指定dataid
     # 跟服务名相同的dataid的配置文件，称之为默认的配置文件
@@ -20,4 +34,4 @@ spring:
     name: com.neil.order.redis
 
 # 配置文件的优先级（优先级大的会覆盖优先级小的，并且会形成互补）
-# profile > 默认的配置文件
+# profile > 默认的配置文件 > extension-configs(下标越大，优先级越高) > shared-configs(下标越大，优先级越高)

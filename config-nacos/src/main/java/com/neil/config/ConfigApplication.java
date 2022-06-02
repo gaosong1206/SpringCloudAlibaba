@@ -20,6 +20,9 @@ public class ConfigApplication {
             System.out.println(userName);
             System.out.println(userAge);
 
+            String config = applicationContext.getEnvironment().getProperty("user.config");
+            System.out.println(config);
+
             TimeUnit.SECONDS.sleep(1);
 
         }
