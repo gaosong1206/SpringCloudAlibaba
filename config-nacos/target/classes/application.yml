@@ -1,0 +1,12 @@
+server:
+  port: 8060
+
+spring:
+  profiles:
+    active: dev
+
+# 在配置中心中，可以通过profile进行配置
+# 只有默认的配置的文件才能结合profile使用
+# 对应的Dataid: ${spring.application.name}-${profile}.${file-extension:properties}
+# profile的后缀必须跟随默认配置文件的格式来
+

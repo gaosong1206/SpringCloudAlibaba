@@ -15,6 +15,7 @@
         <module>config-nacos</module>
         <module>order-sentinel</module>
         <module>sentinel-demo</module>
+        <module>order-openfeign-sentinel</module>
     </modules>
 
     <groupId>com.neil</groupId>
